@@ -29,6 +29,17 @@ public class Main {
         String resultName = resultNameList.getLast();
         System.out.println("Length of longest string: " + resultName.length());
 
+        // Task 2: Use Stream API to find the length of the longest name in the list.
+        System.out.println("Task 2 (alternative):");
+
+        List<String> names2 = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eva");
+        System.out.println("Original list: " + names2);
+        Stream<String> names2Stream = names2.stream();
+
+        int resultName2Length = names2Stream.map(n -> n.length())
+                        .max(Integer::compareTo).get();
+        System.out.println("Length of longest string: " + resultName2Length);
+
     }
 
 }
