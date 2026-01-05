@@ -63,6 +63,24 @@ public class Main {
 
         //endregion
 
+        //region Task 4
+        //Task 4: Use Stream API to find the concatenation of the first two words that have even lengths.
+        System.out.println("Task 4");
+        String resultWord = "";
+
+        List<String> words = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+        System.out.println("Initial words: " + words);
+
+        Stream<String> wordStream = words.stream();
+        List<String> evenWords = wordStream.filter(e -> e.length() % 2 == 0).limit(2).toList();
+        System.out.println("Even Words:" + evenWords);
+        for(String word : evenWords){
+            resultWord += word;
+        }
+        System.out.println("Final word: " + resultWord);
+
+        //endregion
+
 
     }
 
