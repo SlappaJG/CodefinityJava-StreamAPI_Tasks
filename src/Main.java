@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
+        //region Task 1
         // Task 1: Use Stream API to square each number in the list and collect the result into a new list
         System.out.println("Task 1:");
 
@@ -16,7 +17,9 @@ public class Main {
         Stream<Integer> numbersStream = numbers.stream();
         List<Integer> resultNumber = numbersStream.map(n -> n*n).toList();
         System.out.println("Final list: " + resultNumber);
+        //endregion
 
+        //region Task 2
         // Task 2: Use Stream API to find the length of the longest name in the list.
         System.out.println("Task 2:");
 
@@ -28,7 +31,9 @@ public class Main {
         List<String> resultNameList = namesStream.sorted(Comparator.comparingInt(String::length)).skip(listLength-1).toList();
         String resultName = resultNameList.getLast();
         System.out.println("Length of longest string: " + resultName.length());
+        //endregion
 
+        //region Task 2 (Alternative)
         // Task 2: Use Stream API to find the length of the longest name in the list.
         System.out.println("Task 2 (alternative):");
 
@@ -39,6 +44,7 @@ public class Main {
         int resultName2Length = names2Stream.map(n -> n.length())
                         .max(Integer::compareTo).get();
         System.out.println("Length of longest string: " + resultName2Length);
+        //endregion
 
     }
 
