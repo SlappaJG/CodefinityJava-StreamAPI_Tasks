@@ -94,6 +94,23 @@ public class Main {
         System.out.println("Final word:" + resultWord2);
         //endregion
 
+        //region Task 5
+        //Task 5: Use Stream API to find the sum of the squares of even numbers in the list.
+        System.out.println("Task 5");
+        List<Integer> sumSqureNumbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        System.out.println("Initial list of numbers: " + sumSqureNumbers);
+
+        Stream<Integer> sumSquareNumberStream = sumSqureNumbers.stream();
+        int sumedEvensResult = 0;
+
+        List<Integer> evenNumbers = sumSquareNumberStream.filter(n -> n % 2 == 0).map( e -> e*e).toList();
+        System.out.println("Squared even numbers: " + evenNumbers);
+
+        for(int number : evenNumbers){
+            sumedEvensResult += number;
+        }
+        System.out.println("Final result: " + sumedEvensResult);
+        //endregion
     }
 
 }
