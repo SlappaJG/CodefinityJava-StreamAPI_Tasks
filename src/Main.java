@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -78,9 +79,20 @@ public class Main {
             resultWord += word;
         }
         System.out.println("Final word: " + resultWord);
-
         //endregion
 
+        //region Task 4 (Alternative)
+        //Task 4: Use Stream API to find the concatenation of the first two words that have even lengths.
+
+        System.out.println("Task 4 (alternative)");
+
+        List<String> words2 = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+        System.out.println("Initial words: " + words2);
+
+        Stream<String> wordStream2 = words2.stream();
+        String resultWord2 = wordStream2.filter(e -> e.length() % 2 == 0).limit(2).collect(Collectors.joining());
+        System.out.println("Final word:" + resultWord2);
+        //endregion
 
     }
 
