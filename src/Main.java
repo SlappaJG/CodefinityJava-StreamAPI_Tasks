@@ -46,6 +46,24 @@ public class Main {
         System.out.println("Length of longest string: " + resultName2Length);
         //endregion
 
+        //region Task 3
+        //Task 3: Use Stream API to count the total number of distinct words (case-insensitive) in all the sentences
+        System.out.println("Task 3");
+        List<String> sentences = Arrays.asList(
+                "Java Stream API provides a fluent interface for processing sequences of elements.",
+                "It supports functional-style operations on streams of elements, such as map-reduce transformations.",
+                "In this exercise, you need to count the total number of words in all sentences."
+        );
+        System.out.println("Initial list of sentences " + sentences);
+
+        Stream<String> sentencesStream = sentences.stream();
+
+        long resultSentences = sentencesStream.flatMap(sent -> Arrays.stream(sent.split(" "))).distinct().count();
+        System.out.println("Result: " + resultSentences);
+
+        //endregion
+
+
     }
 
 }
